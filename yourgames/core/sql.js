@@ -6,7 +6,7 @@ var uuid= require("node-uuid");
 var pool = sql.createPool({
         "host":"homeserver",
         "user":"root",
-        "password":"sunzongbao2007",
+        "password":"password",
         "database":"yourgames",
     });
 pool.on("connection", function(connection)
