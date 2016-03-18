@@ -1,0 +1,26 @@
+{
+    "set":"Trigger",
+    "items":{
+        "1001":{
+            "id":"1001",
+            "name":"时间",
+            "type":"trigger",
+            "target": "self",
+            "effect": {"cooldown":-5}
+        },
+        "1002":{
+            "id":"1002",
+            "name":"激情",
+            "type":"trigger",
+            "target":"self",
+            "effect":{"leftChances":1}
+        },
+        "1003":{
+            "id":"1003",
+            "name":"荒芜",
+            "type":"trigger",
+            "target":"others",
+            "effect":{"leftChances":-1}
+        }
+    }
+}

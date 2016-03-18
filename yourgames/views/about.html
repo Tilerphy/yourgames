@@ -1,0 +1,29 @@
+{% extends "games_layout.html" %}
+{% block title %}关于（这里有奇怪的东西）{% endblock %}
+{%block script%}
+<script type="text/javascript">
+
+</script>    
+{%endblock%}
+        
+       
+{% block content %}
+        <!--<div class="row">-->
+        <!--    <ul class="nav nav-tabs">-->
+        <!--        <li class="active"><a href="#wanlonglishuiwan">万龙丽水湾</a></li>-->
+        <!--        <li><a href="#others">其他小区</a></li>-->
+        <!--    </ul>-->
+        <!--    -->
+        <!--</div>-->
+        <div id="msg" style="margin-bottom: 100px"></div>
+            <nav class="navbar navbar-fixed-bottom col-xs-8 col-xs-offset-2">
+                <div  class="col-xs-10 col-xs-offset-1">
+                     <label for="saying" class="col-xs-1">Say: </label>
+                     <input id="sayMsg" type="text" class="col-xs-6"/>
+                     <input id="sayBtn" class="btn btn-primary col-xs-2 col-xs-offset-1" type="button" value="发送（Enter）"/>
+                     <input id="muteBtn" type="button" class="btn btn-primary col-xs-2" value="静音（Mute）"/>
+                </div>
+               
+            </nav>
+{% endblock %}
+       

@@ -1,0 +1,48 @@
+{
+    "set":"Mario's Story",
+    "items":{
+        "0001":{
+            "id":"0001",
+            "name":"Mario's Shoes",
+            "type":"collection",
+            "description":"",
+            "icon":""
+        },
+        "0002":{
+            "id":"0002",
+            "name":"Mario's Mashroom",
+            "type":"collection",
+            "description":"",
+            "icon":""
+        },
+        "0003":{
+            "id":"0003",
+            "name":"Mario's Brother",
+            "type":"collection",
+            "description":"",
+            "icon":""
+        },
+        "0004":{
+            "id":"0004",
+            "name":"Mario's Koba?",
+            "type":"collection",
+            "description":"",
+            "icon":""
+        },
+        "0005":{
+            "id":"0005",
+            "name":"Mario's Princess",
+            "type":"collection",
+            "description":"",
+            "icon":""
+        },
+        "0006":{
+            "id":"0006",
+            "name":"Mario's Hat",
+            "type":"collection",
+            "description":"",
+            "icon":""
+        }
+        
+    }
+}
