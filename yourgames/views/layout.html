@@ -24,15 +24,17 @@
         <div class="container">
             <nav class="navbar navbar-default">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/Home">YCG</a>
+                    <a href="/Home"> <img src="/imgs/logo.png" width=50 height=50  style="margin: 2px"/></a>
+                   
                 </div>
                 
                 <ul class="nav navbar-nav">
                         <li><a href="/games"><strong>游戏</strong></a></li>
+                        <li><a href="/real"><strong>协会</strong></a></li>
                         <li><a href="/about"><strong>关于（这里有奇怪的东西）</strong></a></li>
                        
                 </ul>
-                <a id="sign" class="navbar-nav navbar-right btn btn-warning navbar-right signin" href="/auth/signin"><strong>登录</strong></a>
+                <a id="sign" class="navbar-nav navbar-right btn btn-warning signin" href="/auth/signin"><strong>登录</strong></a>
             </nav>
             {% block content %}{% endblock %}
 

@@ -4,6 +4,7 @@ function areas(app) {
     var games = require("./games");
     var about = require("./about");
     var miner = require("./miner");
+    var real = require("./real");
     app.all("/", function(req,res){
             res.redirect("/Home");
         });
@@ -12,6 +13,7 @@ function areas(app) {
     app.use("/Auth",login);
     app.use("/Games", games);
     app.use("/About", about);
+    app.use("/Real", real);
     games.use("/miner", miner);
 }
 module.exports = areas;

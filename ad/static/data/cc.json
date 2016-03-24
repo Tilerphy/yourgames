@@ -21,23 +21,35 @@
                     "description":""
                 }
             },
-            "13596836999-俄罗斯大肉串1":{
+            "10000000-万龙丽水湾7#1307晨露":{
                 "slides":[
                     {
-                        "img": "http://i3.meishichina.com/attachment/recipe/2014/07/03/20140703215116806586672.jpg",
-                        "title":"俄罗斯大肉串"
+                        "img": "/static/data/10000000-1.jpg",
+                        "title":"自家土鸡蛋"
                     },
                     
                     {
-                        "img": "http://i3.meishichina.com/attachment/recipe/2014/07/03/20140703215116806586672.jpg",
-                        "title":"俄罗斯大肉串"
+                        "img": "/static/data/10000000-2.jpg",
+                        "title":"万龙丽水湾7#1307晨露"
+                    }
+                    ,
+                    
+                    {
+                        "img": "/static/data/10000000-3.jpg",
+                        "title":"自家土鸡蛋"
+                    }
+                    ,
+                    
+                    {
+                        "img": "/static/data/10000000-4.jpg",
+                        "title":"万龙丽水湾7#1307晨露"
                     }
                 ],
                 "slidetime":10,
                 "detail":{
                     "imgs":[],
-                    "title":"俄罗斯大肉串",
-                    "phone": "13596836999",
+                    "title":"自家土鸡蛋-万龙丽水湾7#1307晨露",
+                    "phone": "暂无",
                     "address":"吉林省长春市锦湖大路与超凡大街交汇万龙丽水湾北门",
                     "description":""
                 }
