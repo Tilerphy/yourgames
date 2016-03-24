@@ -9,6 +9,7 @@ app.use(bodyParser());
 app.use(cookie());
 app.use("/static", express.static("static"));
 app.use("/", require("./home"));
+app.use("/add", require("./add"));
 app.engine("html", swig.renderFile);
 app.set("view engine", "html");
 app.set("views", __dirname+"/views");
