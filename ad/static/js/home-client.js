@@ -10,6 +10,7 @@ $(function(){
                 for(var slide in slides){
                     var item = $("<div class='item center'>");
                     var img = $(" <img src='"+slides[slide]["img"]+"'>");
+                    img.on("click", result[type][key], popUp);
                     var title = $("<div class='runin'>");
                     title.text(slides[slide]["title"]);
                     items[items.length] = item;
@@ -40,9 +41,10 @@ $(function(){
             //      </div>
             //</div>
     
-        $("#c1").carousel("cycle");
-        $("#c1 img").click(heu);
-        function heu(args) {
+        function popUp(args) {
             $('#window').modal('show');
+            $('#title').text(args.data.detail.title);
+            $('#phone').text("联系方式： "+args.data.detail.phone);
+            $('#description').html("简介： <br>"+args.data.detail.description);
         }
     });

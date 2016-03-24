@@ -12,7 +12,7 @@
                         "title":"俄罗斯大肉串"
                     }
                 ],
-                "slidetime":10,
+                "slidetime":5,
                 "detail":{
                     "imgs":[],
                     "title":"俄罗斯大肉串",
@@ -53,8 +53,14 @@
                     "address":"吉林省长春市锦湖大路与超凡大街交汇万龙丽水湾北门",
                     "description":""
                 }
-            },
-            "20000000-小花":{
+            }
+            
+        },
+    "hotal":{},
+    "mall":{},
+    "play":{},
+    "teach":{
+        "20000000-小花":{
                 "slides":[
                     {
                         "img": "/static/data/20000000-1.jpg",
@@ -77,9 +83,23 @@
                 }
             }
         },
-    "hotal":{},
-    "mall":{},
-    "play":{},
-    "teach":{},
-    "live":{}
+    "live":{
+        "30000000-梁兵兵":{
+                "slides":[
+                    {
+                        "img": "/static/data/30000000-1.jpg",
+                        "title":"蓝月亮-送货到家"
+                    }
+                    
+                ],
+                "slidetime":5,
+                "detail":{
+                    "imgs":[],
+                    "title":"蓝月亮-梁兵兵",
+                    "phone": "微信: bing254571236",
+                    "address":"吉林省长春市锦湖大路与超凡大街交汇万龙丽水湾",
+                    "description":""
+                }
+            }
+    }
 }
