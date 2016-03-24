@@ -1161,7 +1161,7 @@ p.m_5{
    transition-delay: 0.1s;
 }
 .inner_wrap, .inner_wrap2{
-	background:#fff;
+	background-color: ghostwhite;
 	padding:2em 1em 1em;
 	text-align:center;
 	border-bottom-left-radius: 3px;
