@@ -45,6 +45,7 @@ $(function(){
             $('#window').modal('show');
             $('#title').text(args.data.detail.title);
             $('#phone').text("联系方式： "+args.data.detail.phone);
+            $('#address').text("地址： "+args.data.detail.address);
             $('#description').html("简介： <br>"+args.data.detail.description);
         }
     });
