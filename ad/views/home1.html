@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<title>便民</title>
+<link href="/static/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Custom Theme files -->
+<link href="/static/css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--webfont-->
+<script type="text/javascript" src="/static/js/jquery-1.11.1.min.js"></script>
+<!--Animation-->
+<script src="/static/js/wow.min.js"></script>
+<link href="/static/css/animate.css" rel='stylesheet' type='text/css' />
+        <link type="text/css" rel="stylesheet" href="/static/css/common.css">
+<script>
+      position = "/static/data/"+"{{position}}"+".json";
+      type= '{{type}}';
+   </script>
+<script src="/static/js/home-client1.js"></script>
+<script>
+	
+</script>
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+               <!-- <div class="navbar-header">
+                    <a href="/Home"> <img src="/imgs/logo.png" width=50 height=50  style="margin: 2px"/></a>
+                   
+                </div>-->
+                <ul class="nav navbar-nav navbar-left">
+                        <li><a href="?type=food&position={{position}}"><strong>餐饮</strong></a></li>
+                        <li><a href="?type=hotal&position={{position}}"><strong>医疗</strong></a></li>
+                        <li><a href="?type=mall&position={{position}}"><strong>商超</strong></a></li>
+                        <li><a href="?type=play&position={{position}}"><strong>娱乐</strong></a></li>
+                        <li><a href="?type=teach&position={{position}}"><strong>教育</strong></a></li>
+                        <li><a href="?type=live&position={{position}}"><strong>生活服务</strong></a></li>
+                        
+                </ul>
+                <ul class="nav navbar-nav navbar-right default_margin">
+                    <li>
+                        <a class="label label-warning" href="/?position=cc">
+                                <strong id="position">长春</strong>
+                        </a> 
+                    </li>
+                              
+                </ul>
+                
+            </nav>
+   	  <div class="container leaveHeader" id="main">
+
+   		</div>
+   	    
+</body>
+</html>		
