@@ -100,6 +100,23 @@
                     "address":"吉林省长春市锦湖大路与超凡大街交汇万龙丽水湾",
                     "description":""
                 }
+            },
+        "30000001-洗照片":{
+                "slides":[
+                    {
+                        "img": "/static/data/30000001-1.jpg",
+                        "title":"洗照片（除1寸2寸）"
+                    }
+                    
+                ],
+                "slidetime":5,
+                "detail":{
+                    "imgs":[],
+                    "title":"洗照片",
+                    "phone": "微信: lixiang928247352",
+                    "address":"吉林省长春市锦湖大路与超凡大街交汇万龙丽水湾",
+                    "description":""
+                }
             }
     }
 }
