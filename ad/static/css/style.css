@@ -1136,7 +1136,7 @@ p.m_5{
    -ms-transition: all 0.2s ease-in-out;
    transition: all 0.2s ease-in-out;
 }
-.view-first:hover .mask {
+/*.view-first:hover .mask {
    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
    filter: alpha(opacity=100);
    opacity: 1;
@@ -1159,7 +1159,7 @@ p.m_5{
    -o-transition-delay: 0.1s;
    -ms-transition-delay: 0.1s;
    transition-delay: 0.1s;
-}
+}*/
 .inner_wrap, .inner_wrap2{
 	background-color: ghostwhite;
 	padding:2em 1em 1em;
