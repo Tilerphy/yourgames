@@ -127,6 +127,24 @@
                     "address":"吉林省长春市锦湖大路与超凡大街交汇万龙丽水湾",
                     "description":""
                 }
+            },
+        "30000001-韩国登山袜":{
+                "slides":[
+                    {
+                        "img": "/static/data/30000002-1.jpg",
+                        "title":"韩国登山袜"
+                    }
+                    
+                ],
+                "slidetime":5,
+                "detail":{
+                    "imgs":[],
+                    "title":"韩国登山袜",
+                    "phone": "15904402499",
+                    "address":"出售各种韩国登山袜～",
+                    "description":""
+                }
             }
+
     }
 }
