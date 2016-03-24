@@ -54,66 +54,25 @@
                     "description":""
                 }
             },
-            "13596836999-俄罗斯大肉串2":{
+            "20000000-小花":{
                 "slides":[
                     {
-                        "img": "http://i3.meishichina.com/attachment/recipe/2014/07/03/20140703215116806586672.jpg",
-                        "title":"俄罗斯大肉串"
+                        "img": "/static/data/20000000-1.jpg",
+                        "title":"会跳舞的早教机"
                     },
                     
                     {
-                        "img": "http://i3.meishichina.com/attachment/recipe/2014/07/03/20140703215116806586672.jpg",
-                        "title":"俄罗斯大肉串"
+                        "img": "/static/data/20000000-2.jpg",
+                        "title":"万龙丽水湾7#1307晨露"
                     }
-                ],
-                "slidetime":10,
-                "detail":{
-                    "imgs":[],
-                    "title":"俄罗斯大肉串",
-                    "phone": "13596836999",
-                    "address":"吉林省长春市锦湖大路与超凡大街交汇万龙丽水湾北门",
-                    "description":""
-                }
-            },
-            "13596836999-俄罗斯大肉串3":{
-                "slides":[
-                    {
-                        "img": "http://i3.meishichina.com/attachment/recipe/2014/07/03/20140703215116806586672.jpg",
-                        "title":"俄罗斯大肉串"
-                    },
                     
-                    {
-                        "img": "http://i3.meishichina.com/attachment/recipe/2014/07/03/20140703215116806586672.jpg",
-                        "title":"俄罗斯大肉串"
-                    }
                 ],
-                "slidetime":10,
+                "slidetime":5,
                 "detail":{
                     "imgs":[],
-                    "title":"俄罗斯大肉串",
-                    "phone": "13596836999",
-                    "address":"吉林省长春市锦湖大路与超凡大街交汇万龙丽水湾北门",
-                    "description":""
-                }
-            },
-            "13596836999-俄罗斯大肉串4":{
-                "slides":[
-                    {
-                        "img": "http://i3.meishichina.com/attachment/recipe/2014/07/03/20140703215116806586672.jpg",
-                        "title":"俄罗斯大肉串"
-                    },
-                    
-                    {
-                        "img": "http://i3.meishichina.com/attachment/recipe/2014/07/03/20140703215116806586672.jpg",
-                        "title":"俄罗斯大肉串"
-                    }
-                ],
-                "slidetime":2,
-                "detail":{
-                    "imgs":[],
-                    "title":"俄罗斯大肉串",
-                    "phone": "13596836999",
-                    "address":"吉林省长春市锦湖大路与超凡大街交汇万龙丽水湾北门",
+                    "title":"跑跑蚁故事机-小花",
+                    "phone": "xiaohua51545",
+                    "address":"吉林省长春市锦湖大路与超凡大街交汇万龙丽水湾",
                     "description":""
                 }
             }
