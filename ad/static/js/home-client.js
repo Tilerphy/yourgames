@@ -1,6 +1,7 @@
 $(function(){
     $.get(position, function(result){
             var counter= 0;
+            
             for(var key in result[type]){
                 
                 var c = $("<div id='c"+counter+"' class='col-xs-3 col-sm-3 col-md-3 col-lg-3 carousel slide'>");
@@ -8,8 +9,8 @@ $(function(){
                 var slides = result[type][key]["slides"];
                 var items = [];
                 for(var slide in slides){
-                    var item = $("<div class='item center'>");
-                    var img = $(" <img src='"+slides[slide]["img"]+"'>");
+                    var item = $("<div  class='item center'>");
+                    var img = $(" <img  src='"+slides[slide]["img"]+"'>");
                     img.on("click", result[type][key], popUp);
                     var title = $("<div class='runin'>");
                     title.text(slides[slide]["title"]);
