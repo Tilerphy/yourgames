@@ -924,9 +924,9 @@ ul.filter li a i.icon5{
 	-moz-border-radius: 100px;
 	-o-border-radius: 100px;
 }
-.view:hover .sale{
+/*.view:hover .sale{
 	display:none;
-}
+}*/
 i.home{
 	width: 67px;
 	height: 67px;
@@ -1119,13 +1119,13 @@ p.m_5{
    -ms-transition: all 0.2s linear;
    transition: all 0.2s linear;
 }
-.view-first:hover img {
+/*.view-first:hover img {
    -webkit-transform: scale(1.1,1.1);
    -moz-transform: scale(1.1,1.1);
    -o-transform: scale(1.1,1.1);
    -ms-transform: scale(1.1,1.1);
    transform: scale(1.1,1.1);
-}
+}*/
 .view-first a.info {
    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
    filter: alpha(opacity=0);
@@ -1345,27 +1345,27 @@ ul.icons li i.icon1{
 	background: url(../images/icons.png) no-repeat -14px -134px;
 	display: inline-block;
 }
-ul.icons li i.icon1:hover{
+/*ul.icons li i.icon1:hover{
 	background: url(../images/icons.png) no-repeat -14px -12px;
-}
+}*/
 ul.icons li i.icon2{
 	width: 110px;
 	height: 110px;
 	background: url(../images/icons.png) no-repeat -145px -134px;
 	display: inline-block;
 }
-ul.icons li i.icon2:hover{
+/*ul.icons li i.icon2:hover{
 	background: url(../images/icons.png) no-repeat -145px -12px;
-}
+}*/
 ul.icons li i.icon3{
 	width: 110px;
 	height: 110px;
 	background: url(../images/icons.png) no-repeat -278px -134px;
 	display: inline-block;
 }
-ul.icons li i.icon3:hover{
+/*ul.icons li i.icon3:hover{
 	background: url(../images/icons.png) no-repeat -278px -12px;
-}
+}*/
 ul.icons li i.icon4{
 	width: 110px;
 	height: 110px;
