@@ -9,7 +9,7 @@ $(function(){
                 var items = [];
                 for(var slide in slides){
                     var item = $("<div class='item center'>");
-                    var img = $(" <img src='"+slides[slide]["img"]+"'>");
+                    var img = $(" <img class='standard' src='"+slides[slide]["img"]+"'>");
                     var title = $("<div class='runin'>");
                     title.text(slides[slide]["title"]);
                     items[items.length] = item;
