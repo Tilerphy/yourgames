@@ -1,14 +1,9 @@
 {
     "food":{
-            "13596836999-俄罗斯大肉串":{
+            "10000001-俄罗斯大肉串":{
                 "slides":[
                     {
-                        "img": "http://i3.meishichina.com/attachment/recipe/2014/07/03/20140703215116806586672.jpg",
-                        "title":"俄罗斯大肉串"
-                    },
-                    
-                    {
-                        "img": "http://i3.meishichina.com/attachment/recipe/2014/07/03/20140703215116806586672.jpg",
+                        "img": "/static/data/10000001-1.jpg",
                         "title":"俄罗斯大肉串"
                     }
                 ],
@@ -26,23 +21,6 @@
                     {
                         "img": "/static/data/10000000-1.jpg",
                         "title":"自家土鸡蛋"
-                    },
-                    
-                    {
-                        "img": "/static/data/10000000-2.jpg",
-                        "title":"万龙丽水湾7#1307晨露"
-                    }
-                    ,
-                    
-                    {
-                        "img": "/static/data/10000000-3.jpg",
-                        "title":"自家土鸡蛋"
-                    }
-                    ,
-                    
-                    {
-                        "img": "/static/data/10000000-4.jpg",
-                        "title":"万龙丽水湾7#1307晨露"
                     }
                 ],
                 "slidetime":3,
@@ -50,7 +28,39 @@
                     "imgs":[],
                     "title":"自家土鸡蛋-万龙丽水湾7#1307晨露",
                     "phone": "暂无",
-                    "address":"吉林省长春市锦湖大路与超凡大街交汇万龙丽水湾北门",
+                    "address":"吉林省长春市锦湖大路与超凡大街交汇万龙丽水湾",
+                    "description":""
+                }
+            },
+            "10000002-朝族美食":{
+                "slides":[
+                    {
+                        "img": "/static/data/10000002-1.jpg",
+                        "title":"朝族美食"
+                    }
+                ],
+                "slidetime":5,
+                "detail":{
+                    "imgs":[],
+                    "title":"朝族美食",
+                    "phone": "18186887904",
+                    "address":"万龙杂货铺，我家啥都有～",
+                    "description":""
+                }
+            },
+            "10000003-贵川特色私厨外卖":{
+                "slides":[
+                    {
+                        "img": "/static/data/10000003-1.jpg",
+                        "title":"贵川特色私厨外卖"
+                    }
+                ],
+                "slidetime":5,
+                "detail":{
+                    "imgs":[],
+                    "title":"朝川特色私厨外卖",
+                    "phone": "15597721267",
+                    "address":"做您的私人厨师",
                     "description":""
                 }
             }

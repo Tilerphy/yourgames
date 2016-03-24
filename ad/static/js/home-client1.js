@@ -24,7 +24,7 @@ $(function(){
                 var title = $('<h3 id="title">');
                 title.text(data.detail.title);
                 var ad_phone = $('<ul class="star1">');
-                ad_phone.append($('<h4 class="green">地址：'+data.detail.address+'</h4>'));
+                ad_phone.append($('<h4 class="green">'+data.detail.address+'</h4>'));
                 ad_phone.append($('<li>联系方式: '+data.detail.phone+'</li>'));
                 textWrapper.append(title);
                 textWrapper.append(ad_phone);
