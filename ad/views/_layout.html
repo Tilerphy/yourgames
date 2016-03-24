@@ -1,0 +1,44 @@
+<html lang="zh-cn">
+    <head>
+        <meta charset='utf-8'>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="/static/css/common.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/{%block css%}{%endblock%}.css">
+        {%block script%}{%endblock%}
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+               <!-- <div class="navbar-header">
+                    <a href="/Home"> <img src="/imgs/logo.png" width=50 height=50  style="margin: 2px"/></a>
+                   
+                </div>-->
+                <ul class="nav navbar-nav navbar-left">
+                        <li><a href="?type=food&position={{position}}"><strong>餐饮</strong></a></li>
+                        <li><a href="?type=hotal&position={{position}}"><strong>医疗</strong></a></li>
+                        <li><a href="?type=mall&position={{position}}"><strong>商超</strong></a></li>
+                        <li><a href="?type=play&position={{position}}"><strong>娱乐</strong></a></li>
+                        <li><a href="?type=teach&position={{position}}"><strong>教育</strong></a></li>
+                        <li><a href="?type=live&position={{position}}"><strong>生活服务</strong></a></li>
+                        
+                </ul>
+                <ul class="nav navbar-nav navbar-right default_margin">
+                    <li>
+                        <a class="label label-warning" href="/?position=cc">
+                                <strong id="position">长春</strong>
+                        </a> 
+                    </li>
+                              
+                </ul>
+                
+            </nav>
+        <div class="container leaveHeader">
+            
+            {% block content %}{% endblock %}
+
+        </div>
+    </body>
+</html>

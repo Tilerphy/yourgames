@@ -1,0 +1,18 @@
+var express = require("express");
+var cookie = require("cookie-parser");
+var swig = require("swig");
+var bodyParser = require("body-parser");
+var app = express();
+__ = {};
+__.app = app;
+app.use(bodyParser());
+app.use(cookie());
+app.use("/static", express.static("static"));
+app.use("/", require("./home"));
+app.engine("html", swig.renderFile);
+app.set("view engine", "html");
+app.set("views", __dirname+"/views");
+app.set("view cache", false);
+swig.setDefaults({cache:false});
+require("./extensions");
+app.listen(8888);
