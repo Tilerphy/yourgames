@@ -9,4 +9,15 @@ home.get("/", function (req, res){
         }
         
     });
+home.get("/data", function(req, res){
+                var x = require("./sql2json");
+                x.byPosition(req.query.p, function(data){
+                        if (data) {
+                            res.json(data);
+                        }else{
+                                res.end("{}");
+                        }
+                        
+                });
+        });
 module.exports = home;
