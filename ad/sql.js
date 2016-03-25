@@ -130,6 +130,19 @@ var helper = {
         insert:_insert,
          //Query a table with the filter, and then callback the result with the fields
         query:_query,
+        execute: function(sql, params, callback){
+                        pool.getConnection(function(err, connection){
+                                        if (!err) {
+                                            connection.query(sql, params, function(err, result){
+                                                        connection.release();
+                                                        callback(err, result);
+                                                });
+                                        }else{
+                                                connection.release();
+                                                callback(err);
+                                        }
+                                });
+                },
         //Update a table with the filter and the specific object then callback
         update:_update,
         //Delete objects with filter from table then call back

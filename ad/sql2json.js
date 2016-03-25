@@ -5,7 +5,8 @@ var _ = {
             var itemMap = {};
             var number;
             var counter = 0;
-            helper.query("img", "true",[],["count(*) as counter"], function(err, result){
+            helper.execute("select count(*) as counter"+
+                           "from img,item where item.position=? and img.owner = item.id", function(err, result){
                 console.log("1:", err);
                 number = result[0]["counter"];
                 helper.query("item", "position=?", [position],
