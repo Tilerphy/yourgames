@@ -9,17 +9,25 @@
     </head>
     <body>
             <form method="post" enctype="multipart/form-data">
+                <label for="files">Files: </label>
                 <input type="file" multiple="multiple" id="files" name="files">
-                
-                <!--<select name="type">
+                <br>
+                <label for="typename">TypeName: </label>
+                <select id="typename" name="typename">
                     <option value="food">餐饮</option>
                     <option value="hotal">医疗</option>
                     <option value="mall">商超</option>
                     <option value="play">娱乐</option>
                     <option value="teach">教育</option>
                     <option value="live">生活服务</option>
-                </select><br>
-                <label for="key" >Key: </label><input type="text" disabled="disabled" id="key" name="key" value="{{key}}"><br>
+                </select><br><br>
+                <label for="position">Position: </label>
+                <select id="position" name="position">
+                    <option value="by">八一水库</option>
+                </select><br><br>
+                <label for="identifier" >Key: </label><input type="text"  id="identifier"
+                name="identifier" value="{{key}}"><br>
+                <br>
                 <label for="slidetime">SlideTime</label>
                 <select id="slidetime" name="slidetime">
                     <option value="1">1</option>
@@ -27,7 +35,19 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-                </select><br>-->
+                </select><br>
+                <br>
+                <label for="title">Title: </label><input type="text" id="title" name="title">
+                <br>
+                <br>
+                 <label for="phone">Phone: </label><input type="text" id="phone" name="phone">
+                <br>
+                <br>
+                <label for="address">Address: </label><input type="text" id="address" name="address">
+                <br>
+                <br>
+                <label for="description">Description: </label><br>
+                <textarea name="description" id="description"></textarea><br>
                 <input type="submit">
             </form>
     </body>

@@ -5,7 +5,7 @@ home.get("/", function (req, res){
             console.log(req.query);
                 res.render("home1", {position:req.query["position"], type:req.query["type"]});
         }else{
-                res.redirect("/?position=cc&type=food");
+                res.redirect("/?position=by&type=food");
         }
         
     });
