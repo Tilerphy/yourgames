@@ -10,7 +10,7 @@ var _ = {
                 console.log("1:", err);
                 number = result[0]["counter"];
                 helper.query("item", "position=?", [position],
-                         ["id", "identifier","slidetime","phone", "address", "description", "typename", "position"]
+                         ["id", "identifier","slidetime","phone","title", "address", "description", "typename", "position"]
                          ,function (_err, results){
                                 if (_err || !results.length) {
                                     callback(null);
