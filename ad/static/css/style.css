@@ -1172,6 +1172,7 @@ p.m_5{
    -webkit-border-bottom-right-radius: 3px;
    -moz-border-bottom-right-radius: 3px;
    -o-border-bottom-right-radius: 3px;
+   height:160px;
 }
 .inner_wrap h3, .inner_wrap2 h3{
 	color: #566375;
