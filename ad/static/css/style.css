@@ -1014,6 +1014,8 @@ i.search{
 .view img {
    display: block;
    position: relative;
+   width: 100%;
+   height: 300px
 }
 .view h2 {
    text-transform: uppercase;
