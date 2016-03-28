@@ -5,7 +5,7 @@ $(function(){
             for(var key in result[type]){
                 
                 var data = result[type][key];
-                var item= $('<div class="col-md-3 wow bounceIn'+map[counter%3]+'" data-wow-delay="0.4s">');
+                var item= $('<div class="col-md-3 wow bounceIn'+map[counter%3]+'" data-wow-delay="0.2s">');
                 var gird1= $('<div class="grid1">');
                 var imgPanel = $('<div class="view view-first">');
                 var imgin = $('<div class="index_img">');
