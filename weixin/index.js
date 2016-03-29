@@ -25,7 +25,7 @@ var wechat = new WC(option);
 app.get("/weixin", wechat.verifyRequest.bind(wechat));
 app.post("/weixin", wechat.handleRequest.bind(wechat));
 wechat.on("text", function(session){
-        request.post("http://qbao.ddns.net:8888/message", {form:{"message":session.incomingMessage.Content}});
+        request.post("http://ad.flyla.cn:8888/message", {form:{"message":session.incomingMessage.Content}});
         session.replyTextMessage("OK");
     });
 //require("./json2sql");
