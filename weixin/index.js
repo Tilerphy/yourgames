@@ -19,6 +19,7 @@ app.get("/weixin", wechat.verifyRequest.bind(wechat));
 app.post("/weixin", wechat.handleRequest.bind(wechat));
 wechat.on("text", function(session){
         console.log(session.incomingMessage.Content);
+        session.replyTextMsg("OK");
     });
 //require("./json2sql");
 
