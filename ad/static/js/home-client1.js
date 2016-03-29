@@ -1,4 +1,8 @@
 $(function(){
+    IO = io.connect();
+    IO.on("serverCall", function(msg){
+            alert(msg);
+        });
     $.get(position, function(result){
             var counter= 0;
             var ns = [$('#n1'),$('#n2'),$('#n3'),$('#n4')];

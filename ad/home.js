@@ -20,4 +20,10 @@ home.get("/data", function(req, res){
                         
                 });
         });
+home.post("/message", function(req ,res){
+                for (var key in __.socket.sockets.sockets) {
+                    __.socket.sockets.sockets[key].emit("serverCall", req.body.message);
+                }
+                res.end();
+        });
 module.exports = home;

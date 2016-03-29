@@ -17,5 +17,7 @@ app.set("view cache", false);
 swig.setDefaults({cache:false});
 require("./extensions");
 //require("./json2sql");
-
-app.listen(8888);
+var http = require("http").Server(app);
+var socket = require("socket.io")(http);
+__.socket = socket;
+http.listen(8888);
