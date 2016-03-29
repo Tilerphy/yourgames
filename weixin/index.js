@@ -13,12 +13,13 @@ var option = {
         token: "346410840",
         url:"http://ad.flyla.cn/weixin"
     };
-Wechat.prototype.verifyRequest = function(req, res){
+WC.prototype.verifyRequest = function(req, res){
     
   res.write(req.query.echostr);
   res.end();
 };
 var wechat = new WC(option);
+
 app.get("/weixin", wechat.verifyRequest.bind(wechat));
 app.post("/weixin", wechat.handleRequest.bind(wechat));
 wechat.on("text", function(session){
