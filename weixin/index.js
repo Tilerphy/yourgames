@@ -10,7 +10,7 @@ app.use("/weixin", mid.xmlBodyParser({
     }));
 var WC = require("nodejs-wechat");
 var option = {
-        token: "",
+        token: "346410840",
         url:"/weixin"
     };
     
