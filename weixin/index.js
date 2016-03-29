@@ -9,17 +9,15 @@ app.use("/weixin", mid.xmlBodyParser({
         type:"text/xml"
     }));
 var WC = require("nodejs-wechat");
-var option = {
-        token: "346410840",
-        url:"http://ad.flyla.cn/weixin"
-    };
 WC.prototype.verifyRequest = function(req, res){
-    
-  res.write(req.query.echostr);
-  res.end();
+    if (res) {
+        res.write(req.query.echostr);
+        res.end();
+    }
+    return true;
+  
 };
 var wechat = new WC(option);
-
 app.get("/weixin", wechat.verifyRequest.bind(wechat));
 app.post("/weixin", wechat.handleRequest.bind(wechat));
 wechat.on("text", function(session){
