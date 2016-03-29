@@ -5,8 +5,6 @@ var http =require("http");
 var querystring = require("querystring");
 __ = {};
 __.app = app;
-app.use(bodyParser());
-app.use(cookie());
 app.use("/weixin", mid.xmlBodyParser({
         type:"text/xml"
     }));
