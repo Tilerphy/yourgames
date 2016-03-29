@@ -1,11 +1,11 @@
 $(function(){
     $.get(position, function(result){
             var counter= 0;
-            var map = ["Right", "Left",""];
+            var ns = [$('#n1'),$('#n2'),$('#n3'),$('#n4')];
             for(var key in result[type]){
                 
                 var data = result[type][key];
-                var item= $('<div class="col-md-3 leaveHeader wow bounceIn'+map[counter%3]+'" data-wow-delay="0.2s">');
+                var item= $('<div class="col-md-12 leaveHeader wow bounceInLeft" data-wow-delay="0.2s">');
                 var gird1= $('<div class="grid1">');
                 var imgPanel = $('<div class="view view-first">');
                 var imgin = $('<div class="index_img">');
@@ -34,7 +34,7 @@ $(function(){
                 
                 var last = $('<div class="clearfix"> </div>');
                 item.append(last);
-                $("#main").append(item);
+                ns[counter%4].append(item);
                 counter++;
             }
             new WOW().init();
