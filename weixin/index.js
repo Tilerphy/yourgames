@@ -18,8 +18,7 @@ var wechat = new WC(option);
 app.get("/weixin", wechat.verifyRequest.bind(wechat));
 app.post("/weixin", wechat.handleRequest.bind(wechat));
 wechat.on("text", function(session){
-        console.log(arguments);
-        session.replyTextMsg("Completed");
+        console.log(session.incomingMessage.Content);
     });
 //require("./json2sql");
 
