@@ -11,7 +11,7 @@ app.use("/weixin", mid.xmlBodyParser({
 var WC = require("nodejs-wechat");
 var option = {
         token: "346410840",
-        url:"/weixin"
+        url:"http://ad.flyla.cn/weixin"
     };
     
 var wechat = new WC(option);
