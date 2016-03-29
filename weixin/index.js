@@ -9,6 +9,10 @@ app.use("/weixin", mid.xmlBodyParser({
         type:"text/xml"
     }));
 var WC = require("nodejs-wechat");
+var option={
+        url:"",
+        token:""
+    };
 WC.prototype.verifyRequest = function(req, res){
     if (res) {
         res.write(req.query.echostr);
