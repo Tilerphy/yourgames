@@ -24,3 +24,4 @@ wechat.on("text", function(session){
 //require("./json2sql");
 
 app.listen(80);
+console.log("Completed.");
