@@ -14,8 +14,8 @@ WC.prototype.verifyRequest = function(req, res){
   
 };
 var wechat = new WC(option);
-router.get("/weixin", wechat.verifyRequest.bind(wechat));
-router.post("/weixin", wechat.handleRequest.bind(wechat));
+router.get("/", wechat.verifyRequest.bind(wechat));
+router.post("/", wechat.handleRequest.bind(wechat));
 wechat.on("text", function(session){
         for (var key in __.socket.sockets.sockets) {
                     __.socket.sockets.sockets[key].emit("serverCall", req.body.message);
