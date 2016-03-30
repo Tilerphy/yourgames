@@ -11,10 +11,10 @@ app.use(cookie());
 app.use("/static", express.static("static"));
 app.use("/", require("./home"));
 app.use("/add", require("./add"));
-app.use("/weixin", mid.xmlBodyParser({
-        type:"text/xml"
-    }));
-app.use("/weixin", require("./weixin"));
+//app.use("/weixin", mid.xmlBodyParser({
+//        type:"text/xml"
+//    }));
+//app.use("/weixin", require("./weixin"));
 app.engine("html", swig.renderFile);
 app.set("view engine", "html");
 app.set("views", __dirname+"/views");
