@@ -20,7 +20,6 @@ wechat.on("text", function(session){
         for (var key in __.socket.sockets.sockets) {
                     __.socket.sockets.sockets[key].emit("serverCall", req.body.message);
                 }
-        res.end();
         session.replyTextMessage("OK");
     });
 module.exports = router;
