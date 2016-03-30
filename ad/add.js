@@ -7,6 +7,42 @@ var helper = require("./sql");
 router.get("/", function(req,res){
         res.render("add", {key:uuid.v4()});
     });
+router.get("/more", function(req , res){
+                res.render("addmore");
+        });
+router.post("/more", function(req, res){
+                var form = new multiparty.Form();
+                form.encoding="utf-8";
+                form.uploadDir ="./static/data";
+                form.maxFilesSize=2*1024*1024*1024;
+                form.parse(req, function(err, fields, files){
+                                helper.update("item", {"description" :fields.description}, "id=?", [fields.owner], function(err, result){
+                                                if (!err) {
+                                                        for(var i in files.files){
+                                                                var counter = uuid.v4();
+                                                                var identifier = fields.owner + counter;
+                                                                console.log("more files: "+ identifier);
+                                                                var file = files.files[i];
+                                                                fs.renameSync(file.path, "./static/data/"+(identifier)+".jpg");
+                                                                var img ={};
+                                                                img.id= uuid.v4();
+                                                                img.owner = fields.owner;
+                                                                img.url = "/static/data/"+identifier+".jpg";
+                                                                img.title=fields.title;
+                                                                helper.insert("img", img, function(_err, _result){
+                                                                        //do nothing here
+                                                                });
+                                                        }
+                                                        //no wait
+                                                        res.render("addmore");
+                                                }else{
+                                                        console.log(err);
+                                                        res.render("addmore");
+                                                }
+                                        });
+                                
+                        });
+        });
 router.post("/", function(req,res){
         
         var imgs =[];
@@ -20,7 +56,6 @@ router.post("/", function(req,res){
                 console.log(fields);
                 for(var i in files.files){
                     var file = files.files[i];
-                    console.log(file);
                     fs.renameSync(file.path, "./static/data/"+(identifier)+".jpg");
                     var img ={};
                     img.id= uuid.v4();

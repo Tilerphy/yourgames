@@ -25,4 +25,4 @@ require("./extensions");
 var http = require("http").Server(app);
 var socket = require("socket.io")(http);
 __.socket = socket;
-http.listen(80);
+http.listen(8888);

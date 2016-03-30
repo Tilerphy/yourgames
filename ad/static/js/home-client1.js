@@ -10,7 +10,9 @@ $(function(){
             for(var key in result[type]){
                 
                 var data = result[type][key];
+            
                 var item= $('<div class="col-md-12 leaveHeader wow '+map[counter%4]+'" data-wow-delay="0.2s">');
+                item.on("click", data, popUp);
                 var gird1= $('<div class="grid1">');
                 var imgPanel = $('<div class="view view-first">');
                 var imgin = $('<div class="index_img">');
@@ -45,24 +47,24 @@ $(function(){
             new WOW().init();
         });
     
-            //<div id="c1" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 carousel slide">
-            //      <div class="carousel-inner">
-            //         <div class="item active center">
-            //            <img src="http://y1.ifengimg.com/cmpp/2016/03/21/13/86273ffa-9920-4450-b9f4-55eb5140c972_size38_w580_h387.jpg">
-            //            <div class="runin">第一章</div>
-            //         </div>
-            //         <div class="item center">
-            //            <img src="http://7te8bu.com1.z0.glb.clouddn.com/uploads/new/article/740_740/201507/55bb01d0c9234.jpg?imageMogr2/format/jpg/quality/80">
-            //            <div class="runin">第2章</div>
-            //         </div>
-            //      </div>
-            //</div>
     
         function popUp(args) {
             $('#window').modal('show');
-            $('#title').text(args.data.detail.title);
-            $('#phone').text("联系方式： "+args.data.detail.phone);
-            $('#address').text("地址： "+args.data.detail.address);
-            $('#description').html("简介： <br>"+args.data.detail.description);
+            $('#window_title').text(args.data.detail.title);
+            $('#window_phone').text("联系方式： "+args.data.detail.phone);
+            $('#window_address').text("地址： "+args.data.detail.address);
+            $('#window_description').html("简介： <br>"+args.data.detail.description);
+            $('#window_pics').html("");
+            $.get("/loadMore?owner="+args.data.id +"&rand="+Math.random(), function(result){
+                    for (var i in result) {
+                         $('#window_pics').append($('<div class="col-md-10 col-md-offset-1 leaveHeader">'+
+                                                    '<img class="col-md-12 img-responsive" src="'+
+                                                    result[i].url+'"/></div>'));
+                    }
+                });
+            
+        }
+        function mock_get(str, callback) {
+            callback(["/static/data/10000000-1.jpg","/static/data/10000000-1.jpg","/static/data/10000000-1.jpg","/static/data/10000000-1.jpg","/static/data/10000000-1.jpg"]);
         }
     });

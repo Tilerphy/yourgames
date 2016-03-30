@@ -1,0 +1,45 @@
+<html lang="zh-cn">
+    <head>
+        <meta charset='utf-8'>
+        <title>AddMore</title>
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        <script>
+            load_position = "by";
+            load_typename= "food";
+        </script>
+        <script src="/static/js/addmore.js"></script>
+
+    </head>
+    <body>
+            <form method="post" enctype="multipart/form-data">
+                <label for="position">Position: </label>
+                <select id="position" name="position" onchange="positionChanged(this)">
+                    <option value="by" selected="selected">八一水库</option>
+                </select><br><br>
+                <label for="typename">TypeName: </label>
+                <select id="typename" name="typename" onchange="typenameChanged(this)">
+                    <option value="food" selected="selected">餐饮</option>
+                    <option value="healthy">医疗</option>
+                    <option value="mall">商超</option>
+                    <option value="play">娱乐</option>
+                    <option value="teach">教育</option>
+                    <option value="live">生活服务</option>
+                </select><br><br>
+                <div>
+                    <label for="owner">Keys: </label>
+                    <select id="owner" name="owner"></select>
+                </div><br>
+
+                <label for="files">More: </label>
+                <input type="file" multiple="multiple" id="files" name="files">
+                <br>
+                
+                <label for="description">Description: </label><br>
+                <textarea name="description" id="description"></textarea><br>
+                <input type="submit">
+            </form>
+    </body>
+</html>

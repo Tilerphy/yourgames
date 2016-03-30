@@ -9,9 +9,15 @@ home.get("/", function (req, res){
         }
         
     });
+home.get("/loadmore", function(req, res){
+                var x = require("./sql2json");
+                x.loadmore(req.query.owner, function(results){
+                                res.json(results);
+                        });
+        });
 home.get("/data", function(req, res){
                 var x = require("./sql2json");
-                x.byPosition(req.query.p, function(data){
+                x.find(req.query.p, req.query.t, function(data){
                         if (data) {
                             res.json(data);
                         }else{

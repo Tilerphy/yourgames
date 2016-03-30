@@ -1,30 +1,43 @@
 var helper = require("./sql");
 var _ = {
-        byPosition:function(position,callback){
+        loadmore:function(owner, callback){
+                
+                helper.query("img", "owner=?", [owner],["url"], function(err, results){
+                                if (!err) {
+                                    callback(results);
+                                }else{
+                                        console.log("LOAD MORE:", err);
+                                        callback([]);
+                                }
+                        });
+        },
+        find:function(position, typename, callback){
             var obj = {};
             var itemMap = {};
             var number;
             var counter = 0;
+            var filter  = typename? "item.position=? and item.typename=?" : "item.position=?";
+            var params = typename?[position, typename]:[position];
             helper.execute("select count(*) as counter "+
-                           "from img, item where item.position=? and img.owner = item.id", [position], function(err, result){
-                console.log("1:", err);
+                           "from img, item where "+filter+" and img.owner = item.id", params, function(err, result){
                 number = result[0]["counter"];
-                helper.query("item", "position=?", [position],
+
+                console.log(filter,params);
+                helper.query("item", filter, params,
                          ["id", "identifier","slidetime","phone","title", "address", "description", "typename", "position"]
                          ,function (_err, results){
                                 if (_err || !results.length) {
                                     callback(null);
                                     return;
                                 }
-                                console.log("2:", results.length);
                                 for(var index in results){
                                     //create item;
                                     var _r = results[index];
                                     var item = {};
                                     item["identifier"] = _r["identifier"];
                                     item["typename"] = _r["typename"];
-                                    item["id"] = _r["id"];
                                     item["value"] = {};
+                                    item.value["id"] = _r["id"];
                                     item.value["slides"] =[];
                                     item.value["slidetime"] = parseInt(_r["slidetime"]);
                                     item.value["detail"]={
@@ -51,7 +64,6 @@ var _ = {
                                                 obj[_item["typename"]][_item["identifier"]] = _item.value;
                                             }
                                             
-                                            console.log("!"+counter+"#"+number);
                                             if (counter == number) {
                                                 callback(obj);
                                             }

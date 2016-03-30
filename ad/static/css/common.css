@@ -11,7 +11,10 @@ strong{
     color: white
 }
 
-
+.windowImgScroll{
+    overflow-y: auto;
+    max-height: 500px
+}
 .standard{
     height: 300px
 }
