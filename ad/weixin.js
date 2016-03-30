@@ -18,7 +18,7 @@ router.get("/", wechat.verifyRequest.bind(wechat));
 router.post("/", wechat.handleRequest.bind(wechat));
 wechat.on("text", function(session){
         for (var key in __.socket.sockets.sockets) {
-                    __.socket.sockets.sockets[key].emit("serverCall", req.body.message);
+                    __.socket.sockets.sockets[key].emit("serverCall", session.incomingMessage.Content);
                 }
         session.replyTextMessage("OK");
     });
