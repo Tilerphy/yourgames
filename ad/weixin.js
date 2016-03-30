@@ -17,7 +17,10 @@ var wechat = new WC(option);
 router.get("/weixin", wechat.verifyRequest.bind(wechat));
 router.post("/weixin", wechat.handleRequest.bind(wechat));
 wechat.on("text", function(session){
-        request.post("http://ad.flyla.cn:8888/message", {form:{"message":session.incomingMessage.Content}});
+        for (var key in __.socket.sockets.sockets) {
+                    __.socket.sockets.sockets[key].emit("serverCall", req.body.message);
+                }
+        res.end();
         session.replyTextMessage("OK");
     });
 module.exports = router;
