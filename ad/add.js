@@ -4,6 +4,8 @@ var fs = require("fs");
 var router = express.Router();
 var uuid = require("node-uuid");
 var helper = require("./sql");
+var autovalidate = require("./auth").autovalidate;
+router.use(autovalidate("/add"));
 router.get("/", function(req,res){
         res.render("add", {key:uuid.v4()});
     });
@@ -18,20 +20,22 @@ router.post("/more", function(req, res){
                 form.parse(req, function(err, fields, files){
                                 helper.update("item", {"description" :fields.description}, "id=?", [fields.owner], function(err, result){
                                                 if (!err) {
-                                                        for(var i in files.files){
-                                                                var counter = uuid.v4();
-                                                                var identifier = fields.owner + counter;
-                                                                console.log("more files: "+ identifier);
-                                                                var file = files.files[i];
-                                                                fs.renameSync(file.path, "./static/data/"+(identifier)+".jpg");
-                                                                var img ={};
-                                                                img.id= uuid.v4();
-                                                                img.owner = fields.owner;
-                                                                img.url = "/static/data/"+identifier+".jpg";
-                                                                img.title=fields.title;
-                                                                helper.insert("img", img, function(_err, _result){
-                                                                        //do nothing here
-                                                                });
+                                                        if (files.files.length > 0) {
+                                                                for(var i in files.files){
+                                                                        var counter = uuid.v4();
+                                                                        var identifier = fields.owner + counter;
+                                                                        console.log("more files: "+ identifier);
+                                                                        var file = files.files[i];
+                                                                        fs.renameSync(file.path, "./static/data/"+(identifier)+".jpg");
+                                                                        var img ={};
+                                                                        img.id= uuid.v4();
+                                                                        img.owner = fields.owner;
+                                                                        img.url = "/static/data/"+identifier+".jpg";
+                                                                        img.title=fields.title;
+                                                                        helper.insert("img", img, function(_err, _result){
+                                                                                //do nothing here
+                                                                        });
+                                                                }
                                                         }
                                                         //no wait
                                                         res.render("addmore");

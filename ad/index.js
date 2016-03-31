@@ -11,6 +11,7 @@ app.use(cookie());
 app.use("/static", express.static("static"));
 app.use("/", require("./home"));
 app.use("/add", require("./add"));
+app.use("/auth", require("./auth"));
 //app.use("/weixin", mid.xmlBodyParser({
 //        type:"text/xml"
 //    }));

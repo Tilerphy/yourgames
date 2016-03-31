@@ -1,0 +1,39 @@
+{% extends "_layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-xs-12">
+        <h2 class="page-header">
+            注册
+        </h2>
+        <div>
+            <form   id="signup_form" action="/auth/signup" method="POST">
+                <div class="form-group row">
+                    <label for="username" class="control-label col-xs-2 col-xs-offset-4">用户名: </label>
+                     <input class="col-xs-2" type="text" id="username" name="username" placeholder="用户名"/>
+                </div>
+                <div class="form-group row">
+                     <label for="password" class="control-label col-xs-2 col-xs-offset-4">密码: </label>
+                     <input class="col-xs-2" type="password" id="password" name="password" placeholder="Password"/>
+                </div>
+                <div class="form-group row">
+                     <label for="username" class="control-label col-xs-2 col-xs-offset-4">确认密码: </label>
+                     <input class="col-xs-2" type="password" id="confirm" name="confirm"/ placeholder="Confirm Password"/>
+                </div>
+                <div class="form-group row">
+                    <h2 class="page-header">
+                       
+                    </h2>
+                    <span class="col-xs-3 col-xs-offset-7">
+                        <input id="agreement" name="agreement" type="checkbox"/><span class="p-left">同意</span> <a href="#" >条款</a>.
+                    </span>
+                    <span class="col-xs-2">
+                        <input class="col-xs-12 btn btn-primary" type="submit" value="提交"/>
+                    </span>
+                 
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
