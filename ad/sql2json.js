@@ -46,7 +46,7 @@ var _ = {
                                             "description":_r["description"]
                                         };
                                     itemMap[_r["id"]] = item;
-                                    helper.query("img", "owner=? and title <> NULL", [_r["id"]],["id","owner", "url","title"], function(__err,imgs){
+                                    helper.query("img", "owner=? and NOT NULL(title)", [_r["id"]],["id","owner", "url","title"], function(__err,imgs){
                                             var _item;
                                             for(var index in imgs){
                                                 _item = itemMap[imgs[index]["owner"]];
