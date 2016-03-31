@@ -19,7 +19,7 @@ var _ = {
             var filter  = typename? "item.position=? and item.typename=?" : "item.position=?";
             var params = typename?[position, typename]:[position];
             helper.execute("select count(*) as counter "+
-                           "from img, item where "+filter+" and img.owner = item.id", params, function(err, result){
+                           "from img, item where "+filter+" and img.owner = item.id and img.title is not null", params, function(err, result){
                 number = result[0]["counter"];
 
                 helper.query("item", filter, params,
@@ -46,7 +46,7 @@ var _ = {
                                             "description":_r["description"]
                                         };
                                     itemMap[_r["id"]] = item;
-                                    helper.query("img", "owner=? and NOT ISNULL(title)", [_r["id"]],["id","owner", "url","title"], function(__err,imgs){
+                                    helper.query("img", "owner=? and title is not null", [_r["id"]],["id","owner", "url","title"], function(__err,imgs){
                                             var _item;
                                             for(var index in imgs){
                                                 _item = itemMap[imgs[index]["owner"]];
