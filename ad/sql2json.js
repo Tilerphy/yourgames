@@ -22,7 +22,6 @@ var _ = {
                            "from img, item where "+filter+" and img.owner = item.id", params, function(err, result){
                 number = result[0]["counter"];
 
-                console.log(filter,params);
                 helper.query("item", filter, params,
                          ["id", "identifier","slidetime","phone","title", "address", "description", "typename", "position"]
                          ,function (_err, results){
@@ -47,7 +46,7 @@ var _ = {
                                             "description":_r["description"]
                                         };
                                     itemMap[_r["id"]] = item;
-                                    helper.query("img", "owner=?", [_r["id"]],["id","owner", "url","title"], function(__err,imgs){
+                                    helper.query("img", "owner=? and title <> NULL", [_r["id"]],["id","owner", "url","title"], function(__err,imgs){
                                             var _item;
                                             for(var index in imgs){
                                                 _item = itemMap[imgs[index]["owner"]];
