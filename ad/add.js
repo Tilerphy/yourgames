@@ -18,14 +18,20 @@ router.post("/more", function(req, res){
                 form.uploadDir ="./static/data";
                 form.maxFilesSize=2*1024*1024*1024;
                 form.parse(req, function(err, fields, files){
-                                helper.update("item", {"description" :fields.description}, "id=?", [fields.owner], function(err, result){
+                                var tmpFields = {};
+                                if (fields.description && fields.description != "") {
+                                    tmpFields.description = fields.description;
+                                }
+                                tmpFields.slidetime = fields.slidetime;
+                                helper.update("item", tmpFields, "id=?", [fields.owner], function(err, result){
                                                 if (!err) {
-                                                        if (files.files.length > 0) {
-                                                                for(var i in files.files){
-                                                                        var counter = uuid.v4();
-                                                                        var identifier = fields.owner + counter;
-                                                                        console.log("more files: "+ identifier);
-                                                                        var file = files.files[i];
+                                                       for(var i in files.files){
+                                                        
+                                                                var counter = uuid.v4();
+                                                                var identifier = fields.owner + counter;
+                                                                console.log("more files: "+ identifier);
+                                                                var file = files.files[i];
+                                                                if (file.originalFilename) {
                                                                         fs.renameSync(file.path, "./static/data/"+(identifier)+".jpg");
                                                                         var img ={};
                                                                         img.id= uuid.v4();
@@ -34,9 +40,12 @@ router.post("/more", function(req, res){
                                                                         img.title=fields.title;
                                                                         helper.insert("img", img, function(_err, _result){
                                                                                 //do nothing here
-                                                                        });
+                                                                        }); 
+                                                                }else{
+                                                                      fs.unlink(file.path);         
                                                                 }
-                                                        }
+                                                        }         
+
                                                         //no wait
                                                         res.render("addmore");
                                                 }else{

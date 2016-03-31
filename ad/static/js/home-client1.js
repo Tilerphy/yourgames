@@ -18,13 +18,17 @@ $(function(){
                 var imgin = $('<div class="index_img">');
                 imgin.append($('<img src="'+data.slides[0].img+'" class="img-responsive" alt=""/>'));
                 var description = $('<div class="sale" id="description">');
+                
                 description.text(type);
                 var mask = $('<div class="mask">');
                 mask.append($('<img class="col-md-12" src="'+(data.slides[1]?data.slides[1].img: data.slides[0].img)+'"/>'));
-
+                
                 
                 imgPanel.append(imgin);
                 imgPanel.append(description);
+                if (data.slidetime==5) {
+                    imgPanel.append($("<img src='/static/data/validated.png' style='top:7px;left:10px;position:absolute'/>"));
+                }
                 imgPanel.append(mask);
                 
                 var textWrapper = $(' <div class="inner_wrap">');
