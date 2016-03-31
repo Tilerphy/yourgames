@@ -19,9 +19,11 @@
 <script>
       position = "/data?p="+"{{position}}";
       type= '{{type}}';
-   </script>
-<script src="/static/js/home-client1.js"></script>
+</script>
 <script type="text/javascript" src="/static/js/socket.io.js"></script>
+<script src="/static/js/common.js"></script>
+{% block scripts %}
+{% endblock %}
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -36,18 +38,35 @@
                         <li><a href="?type=play&position={{position}}"><strong>娱乐</strong></a></li>
                         <li><a href="?type=teach&position={{position}}"><strong>教育</strong></a></li>
                         <li><a href="?type=live&position={{position}}"><strong>生活服务</strong></a></li>
+
                         
                 </ul>
                 <ul class="nav navbar-nav navbar-right default_margin">
+				    <li>
+                        <a class="label" href="#" id="getSales">
+                                <strong>获取优惠码！</strong>
+                        </a> 
+                    </li>
                     <li>
-                        <a class="label label-warning" href="/?position=by&type=food">
+                        <a class="label label-primary" href="/?position=by&type=food">
                                 <strong id="position">八一水库商圈</strong>
                         </a> 
                     </li>
+					
                               
                 </ul>
                 
             </nav>
+			<div id="dialog" class="modal" tabindex="-1" aria-labelledby="windowtitle" role="dialog">
+				  <div class="modal-dialog">
+						<div class="modal-content">
+						   <div class="modal-body" id="dialog_content">
+
+						   </div>
+						</div>
+			   
+				  </div>
+			</div>
 {% block content %}
 {% endblock %}
    	  

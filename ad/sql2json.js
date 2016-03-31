@@ -1,5 +1,22 @@
 var helper = require("./sql");
+var uuid = require("node-uuid");
 var _ = {
+        getSales:function(callback){
+                var item = {id:uuid.v4(), salescode: parseInt(Math.random()*10000000)};
+                helper.insert("sales", item, function(err, result){
+                                if (!err) {
+                                    callback(item);
+                                }else{
+                                        callback(null);
+                                }
+                        });    
+        },
+        useSales:function(salescode, callback){
+                helper.execute("delete from sales where salescode = ? limit 1", [salescode]
+                               , function(err, result){
+                                        callback((result.affectedRows) && (!err));
+                                });
+        },
         loadmore:function(owner, callback){
                 
                 helper.query("img", "owner=?", [owner],["url"], function(err, results){
