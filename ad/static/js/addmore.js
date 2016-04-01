@@ -1,4 +1,3 @@
-
 function reload() {
        $.get("/data?p="+load_position+"&t="+load_typename, function(result){
             var items = result[load_typename];
@@ -8,6 +7,7 @@ function reload() {
             }
        });
 }
+
 function typenameChanged(args) {
     load_typename= args.value;
     reload();
