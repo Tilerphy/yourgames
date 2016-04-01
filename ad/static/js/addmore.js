@@ -5,6 +5,7 @@ function reload() {
             for(var key in items){
                 $("#owner").append($("<option value='"+items[key].id+"'>"+items[key].detail.title+"</option>"));
             }
+            $("#description").text(items[key].detail.description);
        });
 }
 
