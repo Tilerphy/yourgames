@@ -1,5 +1,5 @@
 $(document).ready(function(){
-        $.get("/about?data=data", function(result){
+        $.get("/about", function(result){
                 for (var i in result){
                     if (result[i].indexOf("【")) {
                         $("#c").append("<h5><strong style='color:black'>"+result[i]+"</strong></h5><br />");
