@@ -37,7 +37,8 @@ home.get("/getSales", function(req, res){
                         }); 
         });
 home.get("/about", function(req, res){
-                fs.readFile("./static/data/wanlonglishuiwan.txt", "utf-8", function(err, data){
+                if (req.query.data) {
+                    fs.readFile("./static/data/wanlonglishuiwan.txt", "utf-8", function(err, data){
                                 if (!err) {
                                     res.json(data.split("\n"));
                                 }else{
@@ -45,5 +46,9 @@ home.get("/about", function(req, res){
                                         res.end();
                                 }
                         });
+                }else{
+                        res.render("about");
+                }
+                
         });
 module.exports = home;
