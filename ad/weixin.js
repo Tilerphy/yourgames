@@ -18,10 +18,14 @@ var wechat = new WC(option);
 router.get("/", wechat.verifyRequest.bind(wechat));
 router.post("/", wechat.handleRequest.bind(wechat));
 wechat.on("text", function(session){
-        //for (var key in __.socket.sockets.sockets) {
-        //            __.socket.sockets.sockets[key].emit("serverCall", session.incomingMessage.Content);
-        //        }
-        //session.replyTextMessage("OK");
+        if (session.incomingMessage.Content.indexOf("HEYSERVER:") === 0) {
+            for (var key in __.socket.sockets.sockets) {
+                            __.socket.sockets.sockets[key].emit("serverCall", session.incomingMessage.Content);
+                        }
+             session.replyTextMessage("OK");
+                return ;
+        }
+        
         if (session.incomingMessage.Content === "我要优惠码") {
                 x.getSales(function(result){
                                 if (result) {
