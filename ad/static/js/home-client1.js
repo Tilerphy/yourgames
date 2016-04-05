@@ -4,6 +4,8 @@ $(function(){
             var counter= 0;
             var ns = [$('#n1'),$('#n2'),$('#n3'),$('#n4')];
             var map = ["bounceInLeft", "bounce", "bounce", "bounceInRight"];
+            var typeMap = {"food":"餐饮", "mall":"商超", "healthy":"医疗", "play":"娱乐", "teach":"教育", "live":"生活服务", "numbers":"旧版通讯录"};
+            $(document).attr("title", "飞啦网-"+typeMap[type]);
             for(var key in result[type]){
                 
                 var data = result[type][key];
