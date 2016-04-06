@@ -22,6 +22,13 @@ router.post("/more", function(req, res){
                                 if (fields.description && fields.description != "") {
                                     tmpFields.description = fields.description;
                                 }
+                                if (fields.willDelete) {
+                                    deleteItem(fields.owner, function(err, result){
+                                                console.log(err?err:("Deleted item: "+fields.owner));
+                                                res.render("addmore");
+                                        });
+                                    return;
+                                }
                                 tmpFields.slidetime = fields.slidetime;
                                 helper.update("item", tmpFields, "id=?", [fields.owner], function(err, result){
                                                 if (!err) {
@@ -96,6 +103,17 @@ router.post("/", function(req,res){
             });
 
     });
+function deleteItem(itemId, callback) {
+        helper.remove("item", "id=?", [itemId], function(_err, _result){
+                        if (_err) {
+                            callback(_err);
+                        }else{
+                                helper.remove("img", "owner=?", [itemId], function(__err, __result){
+                                                callback(__err);
+                                        });
+                        }
+                });
+}
 function insertItem(item, img, callback) {
     helper.insert("item", item, function(err, result){
                 if (err) {

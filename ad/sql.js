@@ -147,6 +147,7 @@ var helper = {
         update:_update,
         //Delete objects with filter from table then call back
         delete:_delete,
+        remove:_delete,
         exists:function(table, filter, params, yes, no){
                 pool.getConnection(function(err, connection){
                                 if (!err) {
