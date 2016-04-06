@@ -10,7 +10,7 @@ $(function(){
                 
                 var data = result[type][key];
             
-                var item= $('<div class="col-md-12 leaveHeader wow '+map[counter%4]+'" data-wow-delay="0.2s">');
+                var item= $('<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 leaveHeader wow '+map[counter%4]+'" data-wow-delay="0.2s">');
                 item.on("click", data, popUp);
                 var gird1= $('<div class="grid1">');
                 var imgPanel = $('<div class="view view-first">');
@@ -20,7 +20,7 @@ $(function(){
                 
                 description.text(type);
                 var mask = $('<div class="mask">');
-                mask.append($('<img class="col-md-12" src="'+(data.slides[1]?data.slides[1].img: data.slides[0].img)+'"/>'));
+                mask.append($('<img class="col-md-12 col-lg-12 col-sm-12 col-xs-12" src="'+(data.slides[1]?data.slides[1].img: data.slides[0].img)+'"/>'));
                 
                 
                 imgPanel.append(imgin);
@@ -64,8 +64,8 @@ $(function(){
             $('#window_pics').html("");
             $.get("/loadMore?owner="+args.data.id +"&rand="+Math.random(), function(result){
                     for (var i in result) {
-                         $('#window_pics').append($('<div class="col-md-10 col-md-offset-1 leaveHeader">'+
-                                                    '<img class="col-md-12 img-responsive" src="'+
+                         $('#window_pics').append($('<div class="col-md-10 col-lg-10 col-sm-10 col-xs-10 col-md-offset-1 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1 leaveHeader">'+
+                                                    '<img class="col-md-12 col-lg-12 col-sm-12 col-xs-12 img-responsive" src="'+
                                                     result[i].url+'"/></div>'));
                     }
                 });
