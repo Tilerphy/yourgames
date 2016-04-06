@@ -15,7 +15,7 @@ $(function(){
                 var gird1= $('<div class="grid1">');
                 var imgPanel = $('<div class="view view-first">');
                 var imgin = $('<div class="index_img">');
-                imgin.append($('<img src="'+data.slides[0].img+'" class="img-responsive" alt=""/>'));
+                imgin.append($('<img src="'+data.slides[0].img+'"  alt=""/>'));
                 var description = $('<div class="sale" id="description">');
                 
                 description.text(type);
