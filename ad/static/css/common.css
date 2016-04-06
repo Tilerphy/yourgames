@@ -14,7 +14,9 @@ strong{
 .width80{
     width: 80%
 }
-
+.width100{
+    width: 100%
+}
 .windowImgScroll{
     overflow-y: auto;
     max-height: 500px
