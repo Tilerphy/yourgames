@@ -18,7 +18,7 @@ $(function(){
                 imgin.append($('<img src="'+data.slides[0].img+'" class="img-responsive" alt=""/>'));
                 var description = $('<div class="sale" id="description">');
                 
-                description.text(type);t
+                description.text(type);
                 var mask = $('<div class="mask">');
                 mask.append($('<img class="col-md-12 col-lg-12 col-sm-12 col-xs-12" src="'+(data.slides[1]?data.slides[1].img: data.slides[0].img)+'"/>'));
                 
