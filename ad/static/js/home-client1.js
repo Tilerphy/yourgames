@@ -18,7 +18,7 @@ $(function(){
                 imgin.append($('<img src="'+data.slides[0].img+'" class="img-responsive" alt=""/>'));
                 var description = $('<div class="sale" id="description">');
                 
-                description.text(type);
+                description.text(type);t
                 var mask = $('<div class="mask">');
                 mask.append($('<img class="col-md-12 col-lg-12 col-sm-12 col-xs-12" src="'+(data.slides[1]?data.slides[1].img: data.slides[0].img)+'"/>'));
                 
@@ -26,10 +26,10 @@ $(function(){
                 imgPanel.append(imgin);
                 imgPanel.append(description);
                 if (data.slidetime==5) {
-                    imgPanel.append($("<img src='/static/data/validated.png' style='top:7px;left:10px;position:absolute'/>"));
+                    imgPanel.append($("<img src='/static/data/validated.png' class='col-md-2 col-lg-2 col-sm-2 col-xs-2' style='top:7px;left:10px;position:absolute'/>"));
                 }
                 if (data.slidetime==4) {
-                    imgPanel.append($("<img src='/static/data/validated.png' style='top:7px;left:10px;position:absolute'/>"));
+                    imgPanel.append($("<img src='/static/data/validated.png' class='col-md-2 col-lg-2 col-sm-2 col-xs-2' style='top:7px;left:10px;position:absolute'/>"));
                     imgPanel.append($("<div class='sale' style='top:40px;right:20px;position:absolute;color:#fff;background-color:crimson'>本站特惠！</div>"));
                 }
                 imgPanel.append(mask);
