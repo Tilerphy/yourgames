@@ -26,10 +26,10 @@ $(function(){
                 imgPanel.append(imgin);
                 imgPanel.append(description);
                 if (data.slidetime==5) {
-                    imgPanel.append($("<img src='/static/data/validated.png' class='col-md-3 col-lg-3 col-sm-3 col-xs-3' style='top:7px;left:10px;position:absolute'/>"));
+                    imgPanel.append($("<img src='/static/data/validated.png' class='col-md-4 col-lg-4 col-sm-4 col-xs-4' style='top:5px;left:5px;position:absolute'/>"));
                 }
                 if (data.slidetime==4) {
-                    imgPanel.append($("<img src='/static/data/validated.png' class='col-md-3 col-lg-3 col-sm-3 col-xs-3' style='top:7px;left:10px;position:absolute'/>"));
+                    imgPanel.append($("<img src='/static/data/validated.png' class='col-md-4 col-lg-4 col-sm-4 col-xs-4' style='top:5px;left:5px;position:absolute'/>"));
                     imgPanel.append($("<div class='sale' style='top:40px;right:20px;position:absolute;color:#fff;background-color:crimson'>本站特惠！</div>"));
                 }
                 imgPanel.append(mask);
