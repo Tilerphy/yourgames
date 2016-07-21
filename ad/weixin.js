@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 var WC = require("nodejs-wechat");
 var x = require("./sql2json");
+var fs = require("fs");
 var option={
         url:"",
         token:""
@@ -26,7 +27,28 @@ wechat.on("text", function(session){
                 return ;
         }
         
-        if (session.incomingMessage.Content === "我要优惠码") {
+        fs.readFile("./data/1-151.txt", function(err, data){
+                        var text = data.toString();
+                        var sp = text.split("\n");
+                        var count = parseInt(session.incomingMessage.Content)-1;
+                        if (count>150 || count <0) {
+                                session.replyTextMessage("还没有收录其他世代的小精灵，敬请期待");
+                        }else{
+                                var line = sp[count];
+                                var cells = line.split(" ");
+                                var att = "";
+                                if (cells.length == 7) {
+                                    att = "["+cells[5]+","+cells[6]+"]";
+                                }else{
+                                        att="["+cells[5]+"]";
+                                }
+                                session.replyTextMessage("全国编号:"+cell[1].trim()+"\n中文名称："+cells[2]
+                                                        +"\n英文名称："+cell[4]+
+                                                        "\n日文名称："+cell[3]+
+                                                        "\n属性："+ att);
+                        }
+                });
+        /*if (session.incomingMessage.Content === "我要优惠码") {
                 x.getSales(function(result){
                                 if (result) {
                                     session.replyTextMessage("您的“飞啦优惠码”是： "+result.salescode +" , 请妥善保管，每个优惠吗只能使用一次哟～ 获取您身边的商家通讯录请访问 http://ad.flyla.cn ");
@@ -42,6 +64,6 @@ wechat.on("text", function(session){
                                         session.replyTextMessage("您输入的优惠码有问题，请检查后再试一试。或者请前往 http://ad.flyla.cn/ 重新申请一个。"); 
                                 }
                 });
-        }
+        }*/
     });
 module.exports = router;
