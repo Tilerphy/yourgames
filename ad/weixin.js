@@ -28,25 +28,27 @@ wechat.on("text", function(session){
         }
         
         fs.readFile("./data/1-151.txt", function(err, data){
-                        var text = data.toString();
-                        var sp = text.split("\n");
-                        var count = parseInt(session.incomingMessage.Content)-1;
-                        if (count>150 || count <0) {
-                                session.replyTextMessage("还没有收录其他世代的小精灵，敬请期待");
-                        }else{
-                                var line = sp[count];
-                                var cells = line.split(" ");
-                                var att = "";
-                                if (cells.length == 7) {
-                                    att = "["+cells[5]+","+cells[6]+"]";
+                        try{
+                                var text = data.toString();
+                                var sp = text.split("\n");
+                                var count = parseInt(session.incomingMessage.Content)-1;
+                                if (count>150 || count <0) {
+                                        session.replyTextMessage("还没有收录其他世代的小精灵，敬请期待");
                                 }else{
-                                        att="["+cells[5]+"]";
+                                        var line = sp[count];
+                                        var cells = line.split(",");
+                                        var att = "";
+                                        if (cells.length == 7) {
+                                            att = "["+cells[5]+","+cells[6]+"]";
+                                        }else{
+                                                att="["+cells[5]+"]";
+                                        }
+                                        session.replyTextMessage("全国编号:"+cells[1].trim()+"\n中文名称："+cells[2].trim()
+                                                                +"\n英文名称："+cells[4].trim()+
+                                                                "\n日文名称："+cells[3].trim()+
+                                                                "\n属性："+ att);
                                 }
-                                session.replyTextMessage("全国编号:"+cell[1].trim()+"\n中文名称："+cells[2]
-                                                        +"\n英文名称："+cell[4]+
-                                                        "\n日文名称："+cell[3]+
-                                                        "\n属性："+ att);
-                        }
+                        }catch(e){session.replyTextMessage("输入数字查询PM");}
                 });
         /*if (session.incomingMessage.Content === "我要优惠码") {
                 x.getSales(function(result){
