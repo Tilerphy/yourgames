@@ -27,12 +27,12 @@ wechat.on("text", function(session){
                 return ;
         }
         
-        fs.readFile("./data/1-151.txt", function(err, data){
+        fs.readFile("./data/1-649.txt", function(err, data){
                         try{
                                 var text = data.toString();
                                 var sp = text.split("\n");
                                 var count = parseInt(session.incomingMessage.Content)-1;
-                                if (count>150 || count <0) {
+                                if (count>648 || count <0) {
                                         session.replyTextMessage("还没有收录其他世代的小精灵，敬请期待");
                                 }else{
                                         var line = sp[count];
