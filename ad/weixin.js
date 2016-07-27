@@ -47,7 +47,7 @@ wechat.on("text", function(session){
                                                                 +"\n英文名称："+cells[4].trim()+
                                                                 "\n日文名称："+cells[3].trim()+
                                                                 "\n属性："+ att +
-                                                                "\n百科： http://www.pokemon.name/wiki/"+ encodeURIComponent(cells[2].trim()));
+                                                                "\n百科： https://wiki.52poke.com/wiki/"+ encodeURIComponent(cells[2].trim()));
                                 }
                         }catch(e){session.replyTextMessage("输入数字查询PM");}
                 });
